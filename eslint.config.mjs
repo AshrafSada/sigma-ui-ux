@@ -6,6 +6,12 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   // Override default ignores of eslint-config-next.
+  {
+    rules: {
+      "@typescript-eslint/no-empty-object-type": "warn",
+      "semi": ["error", "always"],
+    }
+  },
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
@@ -14,5 +20,6 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
 ]);
+
 
 export default eslintConfig;
